@@ -1,22 +1,24 @@
 {% extends "base/base_template.html" %}
 
 {% block content %}
-<h1>Projects</h1>
-<div class="d-flex flex-row flex-wrap">
-{% for project in projects %}
-	<div class="card my-4 me-4" style="width: 18rem;">
-		<div class="card-header">
-			{{ project.release_date|date}}
+<div class="container">
+	<h1>Projects</h1>
+	<div>
+	{% for project in projects %}
+		<div class="card my-4 me-4" style="width: 18rem;">
+			<div class="card-header">
+				{{ project.release_date|date}}
+			</div>
+			<div class="card-body">
+				<h3 class="card-title">{{ project.title }}</h3>
+				<h6 class="card-subtitle my-2 text-muted">{{ project.contributors.all|join:", " }}</h6>
+				<p class="card-text">{{ project.description }}</p>
+				{% if project.github %}
+				<a href="{{ project.github }}" target="_blank" class="btn btn-primary">Github</a>
+				{% endif %}
+			</div>
 		</div>
-		<div class="card-body">
-			<h3 class="card-title">{{ project.title }}</h3>
-			<h6 class="card-subtitle my-2 text-muted">{{ project.contributors.all|join:", " }}</h6>
-			<p class="card-text">{{ project.description }}</p>
-			{% if project.github %}
-			<a href="{{ project.github }}" target="_blank" class="btn btn-primary">Github</a>
-			{% endif %}
-		</div>
+	{% endfor %}
 	</div>
-{% endfor %}
 </div>
 {% endblock %}

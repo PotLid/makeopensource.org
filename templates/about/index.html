@@ -1,10 +1,10 @@
 {% extends "base/base_template.html" %}
-  
+
 {% block content %}
-<div class="container" style="max-width: 600px;">
+<div class="container">
     <div class="row mb-3">
         <h1 class="mb-4">About</h1>
-        <h5>We are University at Buffalo's Open-Source Club!</h5>
+        <h2>We are University at Buffalo's Open-Source Club!</h2>
         <p class="text-secondary"> 
             Our club is dedicated to the development and deployment of 
             open-source software. All projects created under the club 
@@ -15,16 +15,15 @@
 
     <div class="row mb-3">
         <h2>Software</h2>
-        
-        <div class="container p-2 mb-2 bg-light rounded">
+        <div class="container bg-light rounded padding">
             <a href="https://makeopensource.com">
-                <img class="float-start m-2" style="max-height: 40px;" src="../static/assets/icon.png">
+                <img class="software-icon" src="../static/assets/icon.png">
             </a>
             <a href="https://github.com/makeopensource">
-                <img class="float-start m-2" style="max-height: 40px;" src="../static/assets/github-logo.png">
+                <img class="software-icon" src="../static/assets/github-logo.png">
             </a>
             <a href="https://discord.com">
-                <img class="float-start m-2" style="max-height: 40px;" src="../static/assets/Discord-Logo-Black.png">
+                <img class="software-icon" src="../static/assets/Discord-Logo-Black.png">
             </a>
         </div>
 
@@ -35,7 +34,7 @@
     <div class="row mb-3">
         <h2>Our Team</h2>
         <div class="mb-2">
-            <div class="bg-dark rounded-circle me-3" style="width: 75px; height: 75px; float: left;"></div>
+            <div class="profile"></div>
             <div>
                 <b>Emil Kovacev</b>
                 <p>
@@ -46,7 +45,7 @@
         </div>
 
         <div class="mb-2">
-            <div class="bg-dark rounded-circle me-3" style="width: 75px; height: 75px; float: left;"></div>
+            <div class="profile"></div>
 
             <div>
                 <b>Nick Brown</b>
@@ -58,7 +57,7 @@
         </div>
 
         <div class="mb-2">
-            <div class="bg-dark rounded-circle me-3" style="width: 75px; height: 75px; float: left;"></div>
+            <div class="profile"></div>
 
             <div>
                 <b>Jake Savitt</b>
@@ -70,7 +69,7 @@
         </div>
 
         <div class="mb-2">
-            <div class="bg-dark rounded-circle me-3" style="width: 75px; height: 75px; float: left;"></div>
+            <div class="profile"></div>
 
             <div>
                 <b>Anthony Radcliffe</b>
@@ -82,7 +81,7 @@
         </div>
 
         <div class="mb-2">
-            <div class="bg-dark rounded-circle me-3" style="width: 75px; height: 75px; float: left;"></div>
+            <div class="profile"></div>
 
             <div>
                 <b>Adam Russell</b>
@@ -123,10 +122,9 @@
             Current University at Buffalo Students can join the club through 
             our <a href="{% url 'join:index' %}">join portal</a>. For updates 
             on upcoming activities and events, join our Discord server. To check
-             out our latest projects, take a look at our 
-             <a href="https://github.com/makeopensource">GitHub</a> profile.
+                out our latest projects, take a look at our 
+                <a href="https://github.com/makeopensource">GitHub</a> profile.
         </p>
     </div>
-
 </div>
 {% endblock %}

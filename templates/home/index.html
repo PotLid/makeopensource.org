@@ -1,8 +1,8 @@
 {% extends "base/base_template.html" %}
 
 {% block content %}
-<div id="header" class="d-flex justify-content-center align-items-center mb-5">
-	<h1 class="display-5">Welcome to MakeOpenSource, University at Buffalo's dedicated Open Source club 😄</h1>
+<div class="banner">
+	<h1 class="display">Welcome to <b>MakeOpenSource</b>, University at Buffalo's Open Source club 😄</h1>
 </div>
 
 <div id="information" class="container">
@@ -21,8 +21,12 @@
 		<p>
 			If you have an idea for a project, MakeOpenSource is the 
             perfect place to share it and find like-minded people to work 
-            on it with you. To submit an idea, visit the <a href="{% url 'idealab:index' %}">IdeaLab</a> page;
+            on it with you. 
+			{% comment %}
+			To submit an idea, visit the <a href="{% url 'idealab:index' %}">IdeaLab</a> page; 
+			{% endcomment %}
 			to contribute to an existing project, visit the <a href="{% url 'projects:index' %}">Projects</a> page.
+
 		</p>
 	</div>
 

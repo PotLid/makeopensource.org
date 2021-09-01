@@ -1,0 +1,14 @@
+Hi {{ member.username }},
+
+Thanks for joining MakeOpenSource! 🥳 Please click 
+https://makeopensource.org{{ domain }}{% url 'join:activate' uidb64=uid token=token %}
+to validate your email
+This link will expire in 24 hours
+
+If {{ member.username }} isn't you, you can safely ignore this email.
+
+{% comment %} {% url 'join:deactivate' uidb64=uid token=token %} {% endcomment %}
+
+
+From the MakeOpenSource Team
+https://makeopensource.org

@@ -4,31 +4,45 @@
 	{% block title %}<title>MakeOpenSource</title>{% endblock %}
     
 	{% load static %}
+
 	<link rel="icon" type="image" href="{% static 'assets/favicon.ico' %}"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-		rel="stylesheet"
-		ntegrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-		crossorigin="anonymous">
+		  rel="stylesheet"
+		  ntegrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+		  crossorigin="anonymous">
   </head>
 
   <body>
     <!-- navigation -->
-    <ul id="bar-nav" class="my-3 mx-5">
-		<li><a href="/">MakeOpenSource</a></li>
-		<li><a href="{% url 'projects:index' %}">Projects</a></li>
-		<li><a href="{% url 'idealab:index' %}">IdeaLab</a></li>
-		<li><a href="/about">About</a></li>
-		<li><a href="{% url 'join:index' %}">Join</a></li>
-		<li><a href=""><img id="announcements" src="{% static 'assets/Discord-Logo-Black.png' %}"></a></li>
-	</ul>
 
-	<div class="m-5">{% block content %}{% endblock %}</div>
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">
+      			<img src="{% static 'assets/icon.png' %}" alt="" width="30" height="30">
+    		</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<a class="nav-link float-" href="{% url 'announcements:index' %}">Announcements</a>
+					{% comment %} <a class="nav-link" href="{% url 'projects:index' %}">Projects</a> {% endcomment %}
+					{% comment %} <a class="nav-link" href="{% url 'idealab:index' %}">IdeaLab</a> {% endcomment %}
+					<a class="nav-link" href="/about">About</a>
+					<a class="nav-link" href="{% url 'join:index' %}"><span style="color: red">Join</span></a>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
+	<div style="margin-top: 50px;">{% block content %}{% endblock %}</div>
+
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>
 </html>

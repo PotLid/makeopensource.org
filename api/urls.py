@@ -7,15 +7,10 @@ from idealab import views as idealab_views
 from projects import views as project_views
 from announcements import views as announcement_views
 
-from drf_spectacular.views import SpectacularSwaggerView, SpectacularAPIView
 
 
 urlpatterns = [
-
-#    path('', SpectacularSwaggerView.as_view()),
-#    path('docs/', SpectacularSwaggerView.as_view(url_name='schema')),
-#    path('schema/', SpectacularAPIView.as_view(), name='schema'),
-
+    
     # API gateway for Ideas
     path('ideas/', idealab_views.IdeaList.as_view()),
     path('ideas/<int:pk>/', idealab_views.IdeaDetail.as_view()),
